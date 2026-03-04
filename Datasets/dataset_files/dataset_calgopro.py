@@ -141,7 +141,7 @@ class CALGOPRO_dataset(DatasetVSLAMLab):
         fps = cap.get(cv2.CAP_PROP_FPS)
         cap.release()
 
-        # ---- Approximate intrinsics ----
+        # Approximate intrinsics
         import math
 
         fx = 0
@@ -164,38 +164,37 @@ class CALGOPRO_dataset(DatasetVSLAMLab):
         self.write_calibration_yaml(sequence_name=sequence_name, rgbd=[rgbd0])
         
     def create_groundtruth_csv(self, sequence_name: str) -> None:
-        pass
-        # sequence_path = self.dataset_path / sequence_name
-        # groundtruth_txt = sequence_path / "groundtruth.txt"
-        # groundtruth_csv = sequence_path / "groundtruth.csv"
-        # tmp = groundtruth_csv.with_suffix(".csv.tmp")
+        sequence_path = self.dataset_path / sequence_name
+        gt_csv = sequence_path / "groundtruth.csv"
+        tmp_gt_csv = gt_csv.with_suffix(".csv.tmp")
 
-        # if not groundtruth_txt.exists():
-        #     raise FileNotFoundError(f"Missing groundtruth: {groundtruth_txt}")
+        video_path_mp4 = Path(self.video_folder) / f"{sequence_name}.MP4"
+        cap = cv2.VideoCapture(str(video_path_mp4))
 
-        # with open(groundtruth_txt, "r", encoding="utf-8") as fin, open(tmp, "w", newline="", encoding="utf-8") as fout:
-        #     w = csv.writer(fout)
-        #     w.writerow(["ts (ns)","tx (m)","ty (m)","tz (m)","qx","qy","qz","qw"])
-        #     for line in fin:
-        #         s = line.strip()
-        #         if not s or s.startswith("#"):
-        #             continue
+        if not cap.isOpened():
+            print(f"Error: Could not open video file {video_path_mp4}.")
+            return
 
-        #         parts = s.split()
-        #         ts_ns = int(float(parts[0]) * 1e9)
-        #         w.writerow([ts_ns] + parts[1:])
+        with open(tmp_gt_csv, "w", newline="", encoding="utf-8") as fout:
+            writer = csv.writer(fout)
+            writer.writerow(["ts (ns)", "tx (m)", "ty (m)", "tz (m)", "qx", "qy", "qz", "qw"])
 
-        # tmp.replace(groundtruth_csv)
+            while cap.isOpened():
+                ret, _ = cap.read()
+                if not ret:
+                    break
+
+                timestamp_ms = cap.get(cv2.CAP_PROP_POS_MSEC)
+                timestamp_ns = int(timestamp_ms * 1e6)
+
+                # All zeros translation
+                writer.writerow([timestamp_ns, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0])
+
+        cap.release()
+        tmp_gt_csv.replace(gt_csv)
+
 
     def remove_unused_files(self, sequence_name: str) -> None:
         pass
-        # sequence_path = self.dataset_path / sequence_name
 
-        # if BENCHMARK_RETENTION != Retention.FULL:
-        #     for name in ("calibration.txt", "groundtruth.txt", "rgb.txt", "depth.txt", "associated.txt"):
-        #         (sequence_path / name).unlink(missing_ok=True)
-
-        # if BENCHMARK_RETENTION == Retention.MINIMAL:
-        #     for mode in self.modes:
-        #         (self.dataset_path / f"{sequence_name}_{mode}.zip").unlink(missing_ok=True)
 
