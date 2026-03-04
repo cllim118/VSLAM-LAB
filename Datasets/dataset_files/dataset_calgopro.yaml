@@ -6,5 +6,7 @@ modes: ['mono']
 cam_models: ['pinhole']
 
 sequence_names:
-  - air_linear_n
-  - air_narrow_n
+  - water_narrow_h
+  - water_linear_h
+  - water_wide_h
+  - water_super_h
