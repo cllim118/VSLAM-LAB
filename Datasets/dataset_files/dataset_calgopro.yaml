@@ -1,0 +1,10 @@
+dataset_name: calgopro
+
+rgb_hz: 30.0
+video_folder: /home/chelim/chelim/datasets/gopro10
+modes: ['mono']
+cam_models: ['pinhole']
+
+sequence_names:
+  - air_linear_n
+  - air_narrow_n

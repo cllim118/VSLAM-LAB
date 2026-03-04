@@ -49,6 +49,8 @@ from Datasets.dataset_sweetcorals import SWEETCORALS_dataset
 from Datasets.dataset_ntnu_arl_uw import NTNU_ARL_UW_dataset
 from Datasets.dataset_reefslam import REEFSLAM_dataset
 
+from Datasets.dataset_files.dataset_calgopro import CALGOPRO_dataset
+
 SCRIPT_LABEL = f"\033[95m[{Path(__file__).name}]\033[0m "
 
 def get_dataset(dataset_name, benchmark_path):
@@ -92,6 +94,8 @@ def get_dataset(dataset_name, benchmark_path):
         "sweetcorals": lambda: SWEETCORALS_dataset(benchmark_path),
         "ntnu_arl_uw": lambda: NTNU_ARL_UW_dataset(benchmark_path),
         "reefslam": lambda: REEFSLAM_dataset(benchmark_path),
+
+        "calgopro": lambda: CALGOPRO_dataset(benchmark_path),
     }
 
     return switcher.get(dataset_name, lambda: "Invalid case")()
