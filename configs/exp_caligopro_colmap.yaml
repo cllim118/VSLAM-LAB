@@ -1,0 +1,9 @@
+exp_caligopro_colmap:
+  Config: config_caligopro.yaml
+  Module: colmap
+  NumRuns: 1
+  Parameters:
+    matcher_type: exhaustive
+    mode: mono
+    use_gpu: 1
+    verbose: 1
