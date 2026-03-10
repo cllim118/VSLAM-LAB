@@ -12,6 +12,7 @@ kill-all = { cmd = "pkill -f -e 'droidslam|dpvo|mast3rslam|monogs|orbslam2|orbsl
 [environments]
 vslamlab = { features = ["vslamlab"]}
 cuda126 = { features = ["cuda126"], solve-group = "cuda126" }
+cuda128 = { features = ["cuda128"], solve-group = "cuda128" }
 py10 = { features = ["py10"], solve-group = "py10" }
 py11 = { features = ["py11"], solve-group = "py11" }
 x11 = { features = ["x11"], solve-group = "x11" }
@@ -450,6 +451,41 @@ cuda = "12.0"
 # CUDA Build Tools
 cuda-compiler = "*"
 cuda-version = "12.6.*"
+cuda-cudart-dev = "*"
+cuda-crt = "*"
+libcusparse-dev = "*"
+cuda-driver-dev = "*"
+cuda-nvcc = "*"
+cuda-nvrtc-dev = "*"
+cuda-nvtx = "*"
+cuda-nvtx-dev = "*"
+cuda-nvml-dev = "*"
+cuda-profiler-api = "*"
+
+# CUDA Libraries
+cudnn = "*"
+libcublas-dev = "*"
+libcudss-dev = "*"
+libcufile-dev = "*"
+libcufft-dev = "*"
+libcurand-dev = "*"
+libcusolver-dev = "*"
+cusparselt = "*"
+libnvjitlink = "*"
+
+# ########################################################################################################################
+# cuda128 
+[feature.cuda128]
+channels = ["https://prefix.dev/conda-forge"]
+platforms = ["linux-64"]
+
+[feature.cuda128.system-requirements]
+cuda = "12.8"
+
+[feature.cuda128.dependencies]
+# CUDA Build Tools
+cuda-compiler = "*"
+cuda-version = "12.8.*"
 cuda-cudart-dev = "*"
 cuda-crt = "*"
 libcusparse-dev = "*"
