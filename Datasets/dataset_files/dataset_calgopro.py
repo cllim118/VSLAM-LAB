@@ -149,14 +149,12 @@ class CALGOPRO_dataset(DatasetVSLAMLab):
         cx = width / 2
         cy = height / 2
 
-        rgbd0 = {
+        rgb0 = {
             "cam_name": "rgb_0",
             "cam_type": "rgb",
             "cam_model": "unknown",
             "focal_length": [float(fx), float(fy)],
             "principal_point": [float(cx), float(cy)],
-            # "depth_name": "depth_0", 
-            # "depth_factor": 1.0,
             "fps": float(fps),
             "T_BS": np.eye(4),
         }

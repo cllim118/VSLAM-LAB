@@ -1,5 +1,7 @@
 calgopro:
 - water_linear_h
+- water_linear_h_calibmar
+# - air_linear_n
 # - water_narrow_h
 # - water_wide_h
 
