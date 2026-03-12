@@ -14,7 +14,7 @@ vslamlab = { features = ["vslamlab"]}
 cuda126 = { features = ["cuda126"], solve-group = "cuda126" }
 cuda128 = { features = ["cuda128"], solve-group = "cuda128" }
 py10 = { features = ["py10"], solve-group = "py10" }
-py11 = { features = ["py11"], solve-group = "py11" }zz
+py11 = { features = ["py11"], solve-group = "py11" }
 x11 = { features = ["x11"], solve-group = "x11" }
 opengl = { features = ["opengl"], solve-group = "opengl" }
 
