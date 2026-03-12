@@ -4,10 +4,9 @@ exp_caligopro_colmap:
   NumRuns: 1
   Parameters:
     matcher_type: exhaustive
-    # max_rgb: 500
     mode: mono
     use_gpu: 1
-    verbose: 1
+    verbose: 0
 
 # exp_caligopro_glomap:
 #   Config: config_caligopro.yaml
