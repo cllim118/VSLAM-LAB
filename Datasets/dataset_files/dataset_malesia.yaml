@@ -1,0 +1,10 @@
+dataset_name: malesia
+
+image_folder: /home/chelim/chelim/00_dataset/260220_malesia/processed_mediumres/r01/video_output
+rgb_hz: 29.97
+modes: ['mono']
+cam_models: ['pinhole']
+
+sequence_names:
+  - video_images_left
+  - video_images_right

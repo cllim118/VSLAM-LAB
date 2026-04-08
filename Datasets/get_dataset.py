@@ -50,6 +50,7 @@ from Datasets.dataset_ntnu_arl_uw import NTNU_ARL_UW_dataset
 from Datasets.dataset_reefslam import REEFSLAM_dataset
 
 from Datasets.dataset_files.dataset_calgopro import CALGOPRO_dataset
+from Datasets.dataset_files.dataset_malesia import MALESIA_dataset
 
 SCRIPT_LABEL = f"\033[95m[{Path(__file__).name}]\033[0m "
 
@@ -96,6 +97,7 @@ def get_dataset(dataset_name, benchmark_path):
         "reefslam": lambda: REEFSLAM_dataset(benchmark_path),
 
         "calgopro": lambda: CALGOPRO_dataset(benchmark_path),
+        "malesia": lambda: MALESIA_dataset(benchmark_path),
     }
 
     return switcher.get(dataset_name, lambda: "Invalid case")()
