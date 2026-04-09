@@ -1,5 +1,27 @@
-exp_malesia_colmap:
-  Config: config_malesia.yaml
+# exp_malesia_colmap:
+# #200 images, every 25
+#   Config: config_malesia.yaml
+#   Module: colmap
+#   NumRuns: 1
+#   Parameters:
+#     matcher_type: exhaustive
+#     mode: mono
+#     use_gpu: 1
+#     verbose: 0
+
+# exp_malesia_glomap:
+#   Config: config_malesia.yaml
+#   Module: glomap
+#   NumRuns: 1
+#   Parameters:
+#     matcher_type: exhaustive
+#     mode: mono
+#     use_gpu: 1
+#     verbose: 0
+
+exp_malesia_colmap_c01:
+#200 images, every 25
+  Config: config_malesia_c01.yaml
   Module: colmap
   NumRuns: 1
   Parameters:
@@ -8,8 +30,8 @@ exp_malesia_colmap:
     use_gpu: 1
     verbose: 0
 
-exp_malesia_glomap:
-  Config: config_malesia.yaml
+exp_malesia_glomap_c01:
+  Config: config_malesia_c01.yaml
   Module: glomap
   NumRuns: 1
   Parameters:
