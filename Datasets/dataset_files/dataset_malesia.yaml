@@ -8,7 +8,7 @@ cam_models: ['pinhole']
 sequence_names:
   - video_images_left
   - video_images_right
-  - calibmar_left_01
-  - calibmar_right_01
-  - calibmar_left_02
-  - calibmar_right_02
+  - correct_left_01
+  - correct_right_01
+  - correct_left_02
+  - correct_right_02
