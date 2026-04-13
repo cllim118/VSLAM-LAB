@@ -18,24 +18,3 @@ exp_malesia_glomap:
     mode: mono
     use_gpu: 1
     verbose: 0
-
-# exp_malesia_colmap_c01:
-
-#   Config: config_malesia_c01.yaml
-#   Module: colmap
-#   NumRuns: 1
-#   Parameters:
-#     matcher_type: exhaustive
-#     mode: mono
-#     use_gpu: 1
-#     verbose: 0
-
-# exp_malesia_glomap_c01:
-#   Config: config_malesia_c01.yaml
-#   Module: glomap
-#   NumRuns: 1
-#   Parameters:
-#     matcher_type: exhaustive
-#     mode: mono
-#     use_gpu: 1
-#     verbose: 0
