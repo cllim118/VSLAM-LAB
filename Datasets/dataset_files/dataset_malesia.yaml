@@ -6,11 +6,13 @@ modes: ['mono']
 cam_models: ['pinhole']
 
 sequence_names:
-  - video_images_left
-  - video_images_right
-  - correct_left_01
-  - correct_right_01
-  - correct_left_02
-  - correct_right_02
-  - correct_left_03
-  - correct_right_03
+  - r01_left
+  - r02_right
+  - correct_01_left
+  - correct_01_right
+  - correct_02_left
+  - correct_02_right
+  - correct_03_left
+  - correct_03_right
+  - correct_04_left
+  - correct_04_right

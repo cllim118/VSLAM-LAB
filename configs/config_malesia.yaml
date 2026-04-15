@@ -1,4 +1,10 @@
 malesia:
-- correct_left_03
-- correct_right_03
+  # - r01_left
+  # - r02_right
+  - correct_01_left
+  - correct_01_right
+  # - correct_02_left
+  # - correct_02_right
+  # - correct_03_left
+  # - correct_03_right
 
