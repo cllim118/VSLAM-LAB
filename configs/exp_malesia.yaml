@@ -1,5 +1,4 @@
 exp_malesia_colmap:
-#200 images, every 25
   Config: config_malesia.yaml
   Module: colmap
   NumRuns: 1
