@@ -1,6 +1,6 @@
 dataset_name: malesia
 
-image_folder: /home/chelim/chelim/00_dataset/260220_malesia/processed_mediumres/r01/video_output
+image_folder: /home/chelim/chelim/BommieToolkit/calibration_output
 rgb_hz: 29.97
 modes: ['mono']
 cam_models: ['pinhole']
@@ -18,3 +18,6 @@ sequence_names:
   - correct_03_right
   - correct_04_left
   - correct_04_right
+  - calib_w_left
+  - calib_w_right
+

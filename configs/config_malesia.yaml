@@ -1,12 +1,14 @@
 malesia:
   # - r01_left
   # - r02_right
-  - correct_gt_left
-  - correct_gt_right
+  # - correct_gt_left
+  # - correct_gt_right
   # - correct_01_left
   # - correct_01_right
   # - correct_02_left
   # - correct_02_right
   # - correct_03_left
   # - correct_03_right
+  - calib_w_left
+  - calib_w_right
 
