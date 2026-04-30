@@ -1,14 +1,11 @@
 malesia:
   # - r01_left
-  # - r02_right
-  # - correct_gt_left
-  # - correct_gt_right
-  # - correct_01_left
-  # - correct_01_right
-  # - correct_02_left
-  # - correct_02_right
-  # - correct_03_left
-  # - correct_03_right
-  - calib_w_left
-  - calib_w_right
+  # - r01_right
+  # - calibmar_gt_left
+  # - calibmar_gt_right
+  # - calibmar_col_left
+  # - calibmar_colright
+  - chelim_s1337_left
+  - chelim_s1500_left
+
 
