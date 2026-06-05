@@ -1,19 +1,19 @@
-exp_sesoko_colmap:
-  Config: config_sesoko.yaml
-  Module: colmap
-  NumRuns: 1
-  Parameters:
-    matcher_type: exhaustive
-    mode: mono
-    use_gpu: 1
-    verbose: 0
-
-# exp_sesoko_glomap:
+# exp_sesoko_colmap_1:
 #   Config: config_sesoko.yaml
-#   Module: glomap
+#   Module: colmap
 #   NumRuns: 1
 #   Parameters:
 #     matcher_type: exhaustive
 #     mode: mono
 #     use_gpu: 1
 #     verbose: 0
+
+exp_sesoko_mast3r:
+  Config: config_sesoko.yaml
+  Module: mast3rslam
+  NumRuns: 1
+  Parameters:
+    matcher_type: exhaustive
+    mode: mono
+    use_gpu: 1
+    verbose: 0

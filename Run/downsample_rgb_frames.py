@@ -69,7 +69,7 @@ def downsample_rgb_frames(rgb_csv, max_rgb_count, min_fps, verbose=False):
         print(f"  Step size: {step_size:.2f}")
 
     # Downsample RGB images
-    step_size = 25  # pick every 25th frame
+    step_size = 5  # pick every 'n'th frame
     downsampled_paths, downsampled_timestamps, downsampled_rows = downsample_rgb(
         rgb_timestamps, rgb_paths, rows, step_size, max_rgb_count if max_rgb_count else len(rgb_paths)
     )

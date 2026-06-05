@@ -2,7 +2,7 @@ dataset_name: sesoko
 
 rgb_hz: 30.0
 url_download_root: "https://squidle.org"
-api_token: ""
+api_token: "033d4946ae253f1970bd768b66e63e2bbccbb7017501dce2252f9e74"
 modes: ['mono']
 cam_models: ['pinhole']
 target_resolution: [640, 480]
@@ -15,6 +15,7 @@ sequence_names:
   - ssk17-s01
   - ssk18-s01
   - sskall-s01
+  - ssk17_chelim
 
 subsets:
   # ssk16-s01: [ssk16, "rgb_0/8310516.jpg", 2.5] # parent sequence, target image path, radius in meters

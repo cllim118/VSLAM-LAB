@@ -200,7 +200,8 @@ def run_exp(exp_yaml: str | Path) -> None:
             exp_log["SUCCESS"] = exp_log["SUCCESS"].astype(str)
             exp_log["COMMENTS"] = exp_log["COMMENTS"].astype(str)
             exp_log.loc[first_not_finished_experiment, "STATUS"] = "completed"
-            exp_log.loc[first_not_finished_experiment, "SUCCESS"] = results['success']
+            # exp_log.loc[first_not_finished_experiment, "SUCCESS"] = results['success']
+            exp_log.loc[first_not_finished_experiment, "SUCCESS"] = str(results['success'])
             exp_log.loc[first_not_finished_experiment, "COMMENTS"] = results['comments']
             exp_log.loc[first_not_finished_experiment, "TIME"] = duration_time
             exp_log.loc[first_not_finished_experiment, "RAM"] = results['ram']

@@ -18,7 +18,7 @@ py11 = { features = ["py11"], solve-group = "py11" }
 x11 = { features = ["x11"], solve-group = "x11" }
 opengl = { features = ["opengl"], solve-group = "opengl" }
 
-mast3rslam = { features = ["mast3rslam", "cuda126", "py11"], solve-group = "mast3r" }
+mast3rslam = { features = ["mast3rslam", "cuda128", "py11"], solve-group = "mast3r" }
 droidslam = { features = ["droidslam", "cuda126", "py11"], solve-group = "droid" }
 dpvo = { features = ["dpvo", "cuda126", "py11"], solve-group = "droid" }
 monogs = { features = ["monogs"], solve-group = "monogs" }
@@ -32,7 +32,7 @@ pycuvslam = { features = ["pycuvslam","cuda126", "py10"] }
 vggt = { features = ["vggt", "cuda126", "py11"], solve-group = "vggt" }
 vggtslam = { features = ["vggtslam", "cuda126", "py11"], solve-group = "vggt" }
 
-mast3rslam-dev = { features = ["mast3rslam-dev", "cuda126", "py11"], solve-group = "mast3r" }
+mast3rslam-dev = { features = ["mast3rslam-dev", "cuda128", "py11"], solve-group = "mast3r" }
 droidslam-dev = { features = ["droidslam-dev", "cuda126", "py11"], solve-group = "droid" }
 dpvo-dev = { features = ["dpvo-dev", "cuda126", "py11", "x11", "opengl"], solve-group = "droid" }
 monogs-dev = { features = ["monogs-dev", "cuda126", "py10"], solve-group = "monogs" }

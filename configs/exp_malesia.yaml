@@ -1,19 +1,19 @@
-exp_malesia_colmap:
-  Config: config_malesia.yaml
-  Module: colmap
-  NumRuns: 1
-  Parameters:
-    matcher_type: exhaustive
-    mode: mono
-    use_gpu: 1
-    verbose: 0
-
-# exp_malesia_glomap:
+# exp_malesia_colmap:
 #   Config: config_malesia.yaml
-#   Module: glomap
+#   Module: colmap
 #   NumRuns: 1
 #   Parameters:
 #     matcher_type: exhaustive
 #     mode: mono
 #     use_gpu: 1
 #     verbose: 0
+
+exp_malesia_glomap:
+  Config: config_malesia.yaml
+  Module: glomap
+  NumRuns: 1
+  Parameters:
+    matcher_type: exhaustive
+    mode: mono
+    use_gpu: 1
+    verbose: 0
