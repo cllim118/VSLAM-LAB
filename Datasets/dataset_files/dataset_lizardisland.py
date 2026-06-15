@@ -236,8 +236,11 @@ class LIZARDISLAND_dataset(DatasetVSLAMLab):
         rgb_path: Path = sequence_path / "rgb_0"
 
         images = list(rgb_path.glob("*.jpg")) + \
+                list(rgb_path.glob("*.JPG")) + \
                 list(rgb_path.glob("*.jpeg")) + \
-                list(rgb_path.glob("*.png"))
+                list(rgb_path.glob("*.JPEG")) + \
+                list(rgb_path.glob("*.png")) + \
+                list(rgb_path.glob("*.PNG"))
 
         if not images:
             print_msg(SCRIPT_LABEL, f"No images found in {rgb_path}")
