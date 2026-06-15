@@ -1,0 +1,19 @@
+# exp_lizardisland_colmap:
+#   Config: config_lizardisland.yaml
+#   Module: colmap
+#   NumRuns: 1
+#   Parameters:
+#     matcher_type: exhaustive
+#     mode: mono
+#     use_gpu: 1
+#     verbose: 0
+
+exp_lizardisland_glomap:
+  Config: config_lizardisland.yaml
+  Module: glomap
+  NumRuns: 1
+  Parameters:
+    matcher_type: exhaustive
+    mode: mono
+    use_gpu: 1
+    verbose: 0

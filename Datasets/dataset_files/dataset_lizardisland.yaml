@@ -1,0 +1,34 @@
+dataset_name: lizardisland
+
+rgb_hz: 10.0
+local_raw_data_path: "/home/chelim/chelim/00_dataset/Serena_Mou_Data"
+modes: ["mono"]
+cam_models: ["pinhole"]
+target_resolution: [640, 480]
+
+sequence_names:
+  - feb
+  - mar
+  - sep
+  - feb-s03
+  - mar-s03
+  - feb-s05
+  - mar-s05
+  - feb-s10
+  - mar-s10
+  - lirstwo-s03
+  - lirstwo-s05
+
+
+subsets:
+  feb-s03: [feb, "rgb_0/G0027533.JPG", 3.0]
+  mar-s03: [mar, "rgb_0/G0018132.JPG", 3.0]
+  feb-s05: [feb, "rgb_0/G0027533.JPG", 5.0]
+  mar-s05: [mar, "rgb_0/G0018132.JPG", 5.0]
+  feb-s10: [feb, "rgb_0/G0027533.JPG", 10.0]
+  mar-s10: [mar, "rgb_0/G0018132.JPG", 10.0]
+
+
+combined:
+  lirstwo-s03: [feb-s03, mar-s03]
+  lirstwo-s05: [feb-s05, mar-s05]
