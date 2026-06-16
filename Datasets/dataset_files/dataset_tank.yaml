@@ -1,0 +1,14 @@
+dataset_name: tank
+
+image_folder: /home/chelim/chelim/00_dataset/260430_tank/right
+rgb_hz: 29.97
+modes: ['mono']
+cam_models: ['pinhole']
+
+sequence_names:
+  - r01
+  - r02
+  - r03
+  - r04
+  - r05
+  - r06
