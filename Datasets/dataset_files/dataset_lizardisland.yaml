@@ -19,6 +19,10 @@ sequence_names:
   - lirstwo-s03
   - lirstwo-s05
 
+  - feb-s03_corr
+  - feb_corr
+  - feb_corr_0.5
+
 
 subsets:
   feb-s03: [feb, "rgb_0/G0027533.JPG", 3.0]
