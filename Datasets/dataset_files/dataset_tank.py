@@ -33,52 +33,57 @@ class TANK_dataset(DatasetVSLAMLab):
 
 
     def download_sequence_data(self, sequence_name: str) -> None:
-        """Extract frames from MP4, resize to 1920x1080, and format into VSLAM-LAB."""
+        """Extract frames from MP4(s), resize to 1920x1080, and format into VSLAM-LAB."""
         sequence_path = self.dataset_path / sequence_name
-        rgb_folder = sequence_path / "rgb_0"
-        video_path = self.image_folder / f"{sequence_name}.MP4"
-
-        if not video_path.exists():
-            print(f"Error: Video file {video_path} does not exist")
-            return
+        rgb_folder    = sequence_path / "rgb_0"
 
         rgb_folder.mkdir(parents=True, exist_ok=True)
 
-        cap = cv2.VideoCapture(str(video_path))
-        if not cap.isOpened():
-            print(f"Error: Could not open video {video_path}")
+        # ── 영상 파일 찾기 ─────────────────────────────────
+        base_name   = sequence_name  # e.g. "r01"
+        video_paths = sorted(self.image_folder.glob(f"{base_name}-*.MP4"))
+
+        # 단일 파일도 지원 (r01.MP4)
+        single_path = self.image_folder / f"{base_name}.MP4"
+        if not video_paths and single_path.exists():
+            video_paths = [single_path]
+
+        if not video_paths:
+            print(f"Error: No video files found for {sequence_name}")
             return
 
-        # Try to read FPS
-        fps = cap.get(cv2.CAP_PROP_FPS)
-        if fps and fps > 1:
-            self.rgb_hz = fps
-        else:
-            print("Warning: could not detect FPS, using default")
+        print(f"Found {len(video_paths)} video(s): {[p.name for p in video_paths]}")
 
-        total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-        print(f"Extracting {total_frames} frames from video...")
-
+        # ── 프레임 추출 ────────────────────────────────────
         target_size = (1920, 1080)
-
         i = 0
-        while True:
-            ret, frame = cap.read()
-            if not ret:
-                break
 
-            # ✅ Resize frame
-            resized = cv2.resize(frame, target_size, interpolation=cv2.INTER_AREA)
+        for video_path in video_paths:
+            cap = cv2.VideoCapture(str(video_path))
+            if not cap.isOpened():
+                print(f"Error: Could not open video {video_path}")
+                continue
 
-            out_path = rgb_folder / f"img_{i:04d}.png"
-            cv2.imwrite(str(out_path), resized)
-            i += 1
+            fps = cap.get(cv2.CAP_PROP_FPS)
+            if fps and fps > 1:
+                self.rgb_hz = fps
 
-        cap.release()
+            total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+            print(f"Extracting {total_frames} frames from {video_path.name}...")
 
-        print(f"Extracted {i} frames (resized to 1920x1080)")
+            while True:
+                ret, frame = cap.read()
+                if not ret:
+                    break
+                resized  = cv2.resize(frame, target_size, interpolation=cv2.INTER_AREA)
+                out_path = rgb_folder / f"img_{i:04d}.png"
+                cv2.imwrite(str(out_path), resized)
+                i += 1
 
-        # Generate CSV + calibration + GT
+            cap.release()
+
+        print(f"Extracted {i} frames total (resized to 1920x1080)")
+
         self.create_rgb_csv(sequence_name)
         self.create_groundtruth_csv(sequence_name)
         self.create_calibration_yaml(sequence_name)
