@@ -1,0 +1,45 @@
+ WARN cache for Repodata at /home/n12048062/.cache/rattler/cache/repodata is on a network/parallel filesystem (NFS/SMB/FUSE/BeeGFS/Lustre/GPFS/CephFS), redirected to /tmp/pbs.24002921.aqua/pixi-cache-n12048062/repodata for this run. Set [cache.repodata] in config.toml or PIXI_CACHE_DIR to override, or [cache.netfs-redirect] = "never" to keep the original path.
+✨ Pixi task (vslamlab in vslamlab): python vslamlab_gui.py vslamlab configs/feb_r_slg2.yaml --overwrite
+
+[95m[vslamlab_utilities.py][0m Experiment summary: configs/feb_r_slg2.yaml
+     - feb_cor_slg_glo: [96mcolmap[0m, [38;2;255;165;0m config_liz_corr.yaml[0m x1
+
+[95m[vslamlab_utilities.py][0m [33m Overwrite experiment: 'configs/feb_r_slg2.yaml' [0m
+    [33m - Delete:'/mnt/hpccs01/home/n12048062/VSLAM-LAB-Evaluation/feb_cor_slg_glo' [0m
+
+[95m[vslamlab_utilities.py][0m Update experiment csv logs: configs/feb_r_slg2.yaml
+    - [92mCreate new[0m: /mnt/hpccs01/home/n12048062/VSLAM-LAB-Evaluation/feb_cor_slg_glo/vslamlab_exp_log.csv
+
+[95m[vslamlab_utilities.py][0m Checking experiment baselines: configs/feb_r_slg2.yaml
+    - [96mcolmap[0m:[92m is installed[0m
+
+[95m[vslamlab_utilities.py][0m Checking experiment sequences: configs/feb_r_slg2.yaml
+    - Sequences available: [92m1[0m / 1
+
+[95m[vslamlab_utilities.py][0m Checking experiment running state: configs/feb_r_slg2.yaml
+    - feb_cor_slg_glo: [93m0 / 1 (0.0 %)[0m
+
+[95m[vslamlab_utilities.py][0m Running experiments (in configs/feb_r_slg2.yaml) ...
+
+[95m[downsample_rgb_frames.py][0m  Processing file: /mnt/hpccs01/home/n12048062/VSLAM-LAB-Benchmark/LIZARDISLAND/feb_corr/rgb.csv
+
+Downsampling settings:
+  Maximum number of RGB images: 50000000
+  Minimum FPS: 1.0 Hz
+  Mode: fixed
+  Step size: 5.00
+
+Downsampling RGB images:
+  Sequence duration: 1051.00 / 1051.40 seconds
+  Number of RGB images: 2103 / 10515
+  RGB frequency: 2.00 / 10.00 Hz
+
+[95m[run_functions.py][0m Running (it 1/1) [96mcolmap[0m in [38;2;255;165;0mfeb_corr[0m of [38;2;255;165;0mlizardisland[0m ...
+        log file: /mnt/hpccs01/home/n12048062/VSLAM-LAB-Evaluation/feb_cor_slg_glo/LIZARDISLAND/feb_corr/system_output_00000.txt
+
+[95m[vslamlab_utilities.py][0m : Experiment report: configs/feb_r_slg2.yaml
+    [93mNumber of executed iterations: 1 / 1 [0m
+    [93mAverage time per iteration: 13.81 hours[0m
+    [93mTotal time consumed: 13.81 hours[0m
+    [93mRemaining time until completion: 0.00 seconds[0m
+[93m[Experiment runtime: 13.81 hours][0m

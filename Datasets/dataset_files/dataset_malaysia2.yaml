@@ -1,0 +1,18 @@
+dataset_name: malaysia2
+
+image_folder: /work/qvpr/data/raw/BommieToolkit/jul2026_malaysia/p1/s02/syncd
+rgb_hz: 29.97
+modes: ['mono']
+cam_models: ['pinhole']
+
+sequence_names:
+  - p1_s02_C1
+  - p1_s02_C2
+  - p1_s02_C3
+
+  - p1_s02_C1_corr
+  - p1_s02_C2_corr
+  - p1_s02_C3_corr
+
+
+

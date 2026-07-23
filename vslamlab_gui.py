@@ -111,8 +111,8 @@ if __name__ == "__main__":
             get_experiment_resources(exp_yaml)
             check_experiment_state(exp_yaml)   
             run_exp(exp_yaml) 
-            evaluate_exp(exp_yaml, overwrite)     
-            compare_exp(exp_yaml) 
+            # evaluate_exp(exp_yaml, overwrite)     
+            # compare_exp(exp_yaml) 
 
         # VSLAM-LAB get experiment resources  
         if function_name == "get-resources":

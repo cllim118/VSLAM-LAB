@@ -1,0 +1,13 @@
+feb_cor1_slg:
+  Config: config_liz_corr.yaml
+  Module: colmap
+  NumRuns: 1
+  Parameters:
+    matcher_type: exhaustive
+    matching_type: sift_lightglue
+    mapper_type: colmap
+    mode: mono
+    use_gpu: 1
+    verbose: 0
+    step_size: 5
+

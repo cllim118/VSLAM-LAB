@@ -1,5 +1,12 @@
 lizardisland:
-  - feb
-  - feb-s03
-  - feb-s05
-  - feb-s10
+  # - feb
+  # - mar
+  # - sep
+
+  # - feb_corr
+  # - mar_corr
+  # - sep_corr
+
+  # - feb_missing
+  # - feb_missing_0.5
+

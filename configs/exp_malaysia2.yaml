@@ -1,16 +1,19 @@
-exp_lizardisland_colmap_0.5:
-  Config: config_lizardisland.yaml
+exp_malaysia2_colmap_00:
+  Config: config_malaysia2.yaml
   Module: colmap
   NumRuns: 1
   Parameters:
     matcher_type: exhaustive
+    matching_type: sift_bruteforce
+    mapper_type: colmap
     mode: mono
     use_gpu: 1
     verbose: 0
     step_size: 1
 
-# exp_lizardisland_glomap:
-#   Config: config_lizardisland.yaml
+    
+# exp_malaysia2_glomap:
+#   Config: config_malaysia2.yaml
 #   Module: glomap
 #   NumRuns: 1
 #   Parameters:

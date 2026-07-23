@@ -55,7 +55,7 @@ def downsample_rgb_frames(rgb_csv, max_rgb_count, min_fps, step_size=None,verbos
     actual_fps = len(rgb_paths) / sequence_duration
     max_interval = 1.0 / min_fps
     min_interval = sequence_duration / max_rgb_count
-
+    
     if step_size is None:
         mode = "adaptive"
     else:
@@ -80,13 +80,6 @@ def downsample_rgb_frames(rgb_csv, max_rgb_count, min_fps, step_size=None,verbos
     downsampled_paths, downsampled_timestamps, downsampled_rows = downsample_rgb(
         rgb_timestamps, rgb_paths, rows, step_size, max_rgb_count if max_rgb_count else len(rgb_paths)
     )
-    # if max_rgb_count >= len(rgb_paths):
-    #     downsampled_paths = rgb_paths
-    #     downsampled_timestamps = rgb_timestamps
-    #     downsampled_rows = rows
-    # else:
-    #     downsampled_paths, downsampled_timestamps, downsampled_rows = downsample_rgb(rgb_timestamps, rgb_paths, rows, step_size, max_rgb_count)
-
 
     downsampled_duration = (downsampled_timestamps[-1] - downsampled_timestamps[0]) / 1e9
     downsampled_fps = len(downsampled_paths) / downsampled_duration

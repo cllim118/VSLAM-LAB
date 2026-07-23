@@ -86,7 +86,7 @@ class LIZARDISLAND_dataset(DatasetVSLAMLab):
         if origin_latlon is None:
             print_msg(SCRIPT_LABEL, "WARNING: No GPS fixes found — groundtruth will be all zeros.")
 
-        # ── compute output resolution (aspect ratio 유지) ─
+        # ── compute output resolution (aspect ratio) ─
         new_W, new_H = self._compute_resolution(image_files[0], sequence_name)
         print_msg(SCRIPT_LABEL, f"Output resolution: {new_W}x{new_H}")
 
@@ -136,7 +136,6 @@ class LIZARDISLAND_dataset(DatasetVSLAMLab):
 
 
     def _compute_resolution(self, sample_image: Path, sequence_name: str) -> tuple[int, int]:
-        """target_resolution 유지하면서 aspect ratio 보존"""
         with Image.open(sample_image) as img:
             w, h = img.size
             crop = IMAGE_CROP.get(sequence_name, [0, 0])
@@ -256,7 +255,7 @@ class LIZARDISLAND_dataset(DatasetVSLAMLab):
             "focal_length": [0.0, 0.0],
             "principal_point": [new_W / 2.0, new_H / 2.0],
             "fps": float(self.rgb_hz),
-            "T_BS": np.eye(4).tolist(),
+            "T_BS": np.eye(4),
         }
         self.write_calibration_yaml(sequence_name=sequence_name, rgb=[rgb0])
 

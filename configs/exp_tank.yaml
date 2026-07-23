@@ -1,5 +1,5 @@
-exp_lizardisland_colmap_0.5:
-  Config: config_lizardisland.yaml
+exp_tank_colmap:
+  Config: config_tank.yaml
   Module: colmap
   NumRuns: 1
   Parameters:
@@ -7,10 +7,10 @@ exp_lizardisland_colmap_0.5:
     mode: mono
     use_gpu: 1
     verbose: 0
-    step_size: 1
+    step_size: 10
 
-# exp_lizardisland_glomap:
-#   Config: config_lizardisland.yaml
+# exp_tank_glomap:
+#   Config: config_tank.yaml
 #   Module: glomap
 #   NumRuns: 1
 #   Parameters:

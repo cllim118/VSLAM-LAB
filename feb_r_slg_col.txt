@@ -1,0 +1,2 @@
+ WARN cache for Repodata at /home/n12048062/.cache/rattler/cache/repodata is on a network/parallel filesystem (NFS/SMB/FUSE/BeeGFS/Lustre/GPFS/CephFS), redirected to /tmp/pbs.23974532.aqua/pixi-cache-n12048062/repodata for this run. Set [cache.repodata] in config.toml or PIXI_CACHE_DIR to override, or [cache.netfs-redirect] = "never" to keep the original path.
+✨ Pixi task (vslamlab in vslamlab): python vslamlab_gui.py vslamlab configs/feb_r_slg.yaml  

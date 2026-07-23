@@ -1,0 +1,86 @@
+ WARN cache for Repodata at /home/n12048062/.cache/rattler/cache/repodata is on a network/parallel filesystem (NFS/SMB/FUSE/BeeGFS/Lustre/GPFS/CephFS), redirected to /tmp/pbs.23974532.aqua/pixi-cache-n12048062/repodata for this run. Set [cache.repodata] in config.toml or PIXI_CACHE_DIR to override, or [cache.netfs-redirect] = "never" to keep the original path.
+✨ Pixi task (vslamlab in vslamlab): python vslamlab_gui.py vslamlab configs/feb_r_sbf.yaml  
+
+[95m[vslamlab_utilities.py][0m Experiment summary: configs/feb_r_sbf.yaml
+     - feb_miss_sbf_glo: [96mcolmap[0m, [38;2;255;165;0m config_liz_miss.yaml[0m x1
+
+[95m[vslamlab_utilities.py][0m Update experiment csv logs: configs/feb_r_sbf.yaml
+    - [92mCreate new[0m: /mnt/hpccs01/home/n12048062/VSLAM-LAB-Evaluation/feb_miss_sbf_glo/vslamlab_exp_log.csv
+
+[95m[vslamlab_utilities.py][0m Checking experiment baselines: configs/feb_r_sbf.yaml
+    - [96mcolmap[0m:[92m is installed[0m
+
+[95m[vslamlab_utilities.py][0m Checking experiment sequences: configs/feb_r_sbf.yaml
+    - Sequences available: [92m3[0m / 3
+
+[95m[vslamlab_utilities.py][0m Checking experiment running state: configs/feb_r_sbf.yaml
+    - feb_miss_sbf_glo: [93m0 / 1 (0.0 %)[0m
+
+[95m[vslamlab_utilities.py][0m Running experiments (in configs/feb_r_sbf.yaml) ...
+
+[95m[downsample_rgb_frames.py][0m  Processing file: /mnt/hpccs01/home/n12048062/VSLAM-LAB-Benchmark/LIZARDISLAND/feb_missing/rgb.csv
+
+Downsampling settings:
+  Maximum number of RGB images: 50000000
+  Minimum FPS: 1.0 Hz
+  Mode: fixed
+  Step size: 1.00
+
+Downsampling RGB images:
+  Sequence duration: 1051.00 / 1051.00 seconds
+  Number of RGB images: 1210 / 1210
+  RGB frequency: 1.15 / 1.15 Hz
+
+[95m[run_functions.py][0m Running (it 1/1) [96mcolmap[0m in [38;2;255;165;0mfeb_missing[0m of [38;2;255;165;0mlizardisland[0m ...
+        log file: /mnt/hpccs01/home/n12048062/VSLAM-LAB-Evaluation/feb_miss_sbf_glo/LIZARDISLAND/feb_missing/system_output_00000.txt
+
+[95m[vslamlab_utilities.py][0m : Experiment report: configs/feb_r_sbf.yaml
+    [93mNumber of executed iterations: 1 / 3 [0m
+    [93mAverage time per iteration: 24.84 minutes[0m
+    [93mTotal time consumed: 24.84 minutes[0m
+    [93mRemaining time until completion: 49.69 minutes[0m
+
+[95m[downsample_rgb_frames.py][0m  Processing file: /mnt/hpccs01/home/n12048062/VSLAM-LAB-Benchmark/LIZARDISLAND/feb_missing_0.5/rgb.csv
+
+Downsampling settings:
+  Maximum number of RGB images: 50000000
+  Minimum FPS: 1.0 Hz
+  Mode: fixed
+  Step size: 1.00
+
+Downsampling RGB images:
+  Sequence duration: 1051.00 / 1051.00 seconds
+  Number of RGB images: 1210 / 1210
+  RGB frequency: 1.15 / 1.15 Hz
+
+[95m[run_functions.py][0m Running (it 1/1) [96mcolmap[0m in [38;2;255;165;0mfeb_missing_0.5[0m of [38;2;255;165;0mlizardisland[0m ...
+        log file: /mnt/hpccs01/home/n12048062/VSLAM-LAB-Evaluation/feb_miss_sbf_glo/LIZARDISLAND/feb_missing_0.5/system_output_00000.txt
+
+[95m[vslamlab_utilities.py][0m : Experiment report: configs/feb_r_sbf.yaml
+    [93mNumber of executed iterations: 2 / 3 [0m
+    [93mAverage time per iteration: 23.84 minutes[0m
+    [93mTotal time consumed: 47.69 minutes[0m
+    [93mRemaining time until completion: 23.84 minutes[0m
+
+[95m[downsample_rgb_frames.py][0m  Processing file: /mnt/hpccs01/home/n12048062/VSLAM-LAB-Benchmark/LIZARDISLAND/feb_missing_1.0/rgb.csv
+
+Downsampling settings:
+  Maximum number of RGB images: 50000000
+  Minimum FPS: 1.0 Hz
+  Mode: fixed
+  Step size: 1.00
+
+Downsampling RGB images:
+  Sequence duration: 1051.00 / 1051.00 seconds
+  Number of RGB images: 1210 / 1210
+  RGB frequency: 1.15 / 1.15 Hz
+
+[95m[run_functions.py][0m Running (it 1/1) [96mcolmap[0m in [38;2;255;165;0mfeb_missing_1.0[0m of [38;2;255;165;0mlizardisland[0m ...
+        log file: /mnt/hpccs01/home/n12048062/VSLAM-LAB-Evaluation/feb_miss_sbf_glo/LIZARDISLAND/feb_missing_1.0/system_output_00000.txt
+
+[95m[vslamlab_utilities.py][0m : Experiment report: configs/feb_r_sbf.yaml
+    [93mNumber of executed iterations: 3 / 3 [0m
+    [93mAverage time per iteration: 24.12 minutes[0m
+    [93mTotal time consumed: 1.21 hours[0m
+    [93mRemaining time until completion: 0.00 seconds[0m
+[93m[Experiment runtime: 1.21 hours][0m

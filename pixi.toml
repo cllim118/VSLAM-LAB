@@ -7,7 +7,7 @@ platforms = ["linux-64"]
 
 [tasks]
 clean-swap = { cmd = "sudo /sbin/swapoff -a && sudo /sbin/swapon -a" }
-kill-all = { cmd = "pkill -f -e 'droidslam|dpvo|mast3rslam|monogs|orbslam2|orbslam3|anyfeature|okvis2|colmap|glomap|vggt|pycuvslam|vslamlab' && sudo /sbin/swapoff -a && sudo /sbin/swapon -a" } 
+kill-all = { cmd = "pkill -f -e 'droidslam|dpvo|mast3rslam|monogs|orbslam2|orbslam3|anyfeature|okvis2|colmap|vggt|pycuvslam|vslamlab' && sudo /sbin/swapoff -a && sudo /sbin/swapon -a" } 
 
 [environments]
 vslamlab = { features = ["vslamlab"]}
@@ -25,7 +25,6 @@ monogs = { features = ["monogs"], solve-group = "monogs" }
 orbslam2 = { features = ["orbslam2"], solve-group = "orb" }
 anyfeature = { features = ["anyfeature"], solve-group = "anyfeature" }
 colmap = { features = ["colmap"], solve-group = "colmap" }
-glomap = { features = ["glomap", "colmap"], solve-group = "colmap" }
 orbslam3 = { features = ["orbslam3"], solve-group = "orb" }
 okvis2 = { features = ["okvis2"], solve-group = "okvis" }
 pycuvslam = { features = ["pycuvslam","cuda126", "py10"] }
@@ -280,14 +279,14 @@ channels = ["https://prefix.dev/conda-forge"]
 platforms = ["linux-64"]
 
 [feature.colmap.system-requirements]
-cuda = "12.6"
+cuda = "12.9"
 
 [feature.colmap.tasks]
 git-clone = { cmd = 'git clone https://huggingface.co/vslamlab/colmap-vslamlab colmap', cwd = 'Baselines' }
 execute-mono = './Baselines/colmap/colmap_reconstruction.sh'
 
 [feature.colmap.dependencies]
-colmap = { build = "*cuda*" }
+colmap = {version="=4.1.0", build = "*cuda*" }
 yq = "*"
 numpy = "*"
 scipy = "*"
@@ -296,22 +295,13 @@ sqlite = "*"
 opencv = "*"
 tqdm = "*"
 
+faiss = "*"
+openimageio = "*"
+libcufft = "*"
+cudnn = "*"
+
 ########################################################################################################################
 ########################################################################################################################
-# glomap
-[feature.glomap]
-channels = ["https://prefix.dev/conda-forge"]
-platforms = ["linux-64"]
-
-[feature.glomap.system-requirements]
-cuda = "12.6"
-
-[feature.glomap.tasks]
-git-clone = { cmd = 'git clone https://huggingface.co/vslamlab/glomap-vslamlab glomap', cwd = 'Baselines' }
-execute-mono = { cmd = './Baselines/glomap/glomap_reconstruction.sh' }
-
-[feature.glomap.dependencies]
-glomap = { build = "*cuda*"}
 
 ########################################################################################################################
 ########################################################################################################################

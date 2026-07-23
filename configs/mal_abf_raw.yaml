@@ -1,0 +1,13 @@
+mal_abf_raw:
+  Config: config_mal_raw.yaml
+  Module: colmap
+  NumRuns: 1
+  Parameters:
+    matcher_type: exhaustive
+    matching_type: aliked_bruteforce
+    mapper_type: colmap
+    mode: mono
+    use_gpu: 1
+    verbose: 0
+    step_size: 3
+
